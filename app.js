@@ -1,5 +1,6 @@
 const userBday = document.querySelector('#user-bday')
 const checkBtn = document.querySelector('#check-btn')
+const showResult = document.querySelector('#show-result')
 
 
 const getReverseStr = (str) => {
@@ -125,8 +126,14 @@ const getNextPalindrome = (date) => {
     return [count, nextDate]
 }
 
+const handleShowResult = (value, color) => {
+    showResult.style.display = 'block'
+    showResult.style.backgroundColor = color
+    showResult.innerText = value
+}
 
 const handleClick = () => {
+    showResult.style.display = 'none'
     const userBdayList = userBday.value.split('-')
     
     const userBdayObj = {
@@ -138,11 +145,11 @@ const handleClick = () => {
     const isPalindrome = checkAllDateFormatPalindrome(userBdayObj)
     
     if(isPalindrome){
-        console.log(isPalindrome)
+        handleShowResult(`Yayyy!! Your Birthday Is A Palindrome...`, 'green')
     }else{
         const [count,nextPalindrome] = getNextPalindrome(userBdayObj)
-        console.log(count)
-        console.log(nextPalindrome)
+
+        handleShowResult(`Oops! Your Birthday is not a palindrome. You Missed by ${count} days. The next palindrome date - ${nextPalindrome.day}:${nextPalindrome.month}:${nextPalindrome.year}`, 'red')
     }
 }
 

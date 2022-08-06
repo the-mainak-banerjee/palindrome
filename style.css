@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    padding: 20px 20px;
+    text-align: center;
+    background-color: #49a0eb;
+    color: white;
+}
+
+section{
+    text-align: center;
+    margin: 20px 10px;
+    height: 60vh;
+}
+
+.description{
+    margin: 30px 0px;
+    font-size: 1.3rem;
+}
+
+#user-bday{
+    margin: 2px 0px 25px;
+    padding: 10px;
+    border: 2px solid #49a0eb;
+    border-radius: 8px;
+    /* width: 30%; */
+    font-size: 20px;
+}
+
+
+button{
+    padding: 10px 40px;
+    /* width: 30%; */
+    border: none;
+    background-color: #49a0eb;
+    color: white;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#show-result{
+    width: 70vw;
+    margin: 20px auto;
+    padding: 20px 10px;
+    color: white;
+    border-radius: 15px;
+    display: none;
+}
+
+
+footer{
+    background-color: #49A0EB;
+    padding: 30px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+footer>ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+footer>ul>li {
+    padding: 20px;
+}
