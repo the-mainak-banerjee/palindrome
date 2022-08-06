@@ -13,8 +13,9 @@ header{
 
 section{
     text-align: center;
-    margin: 20px 10px;
+    margin: 20px auto;
     height: 60vh;
+    width: 60vw;
 }
 
 .description{
@@ -44,7 +45,7 @@ button{
 }
 
 #show-result{
-    width: 70vw;
+    width: 60%;
     margin: 20px auto;
     padding: 20px 10px;
     color: white;
