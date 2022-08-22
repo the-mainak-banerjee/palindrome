@@ -14,7 +14,7 @@ header{
 section{
     text-align: center;
     margin: 20px auto;
-    height: 60vh;
+    min-height: 100vh;
     width: 60vw;
 }
 

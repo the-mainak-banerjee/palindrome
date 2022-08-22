@@ -134,22 +134,26 @@ const handleShowResult = (value, color) => {
 
 const handleClick = () => {
     showResult.style.display = 'none'
-    const userBdayList = userBday.value.split('-')
+    if(userBday.value !== ''){
+        const userBdayList = userBday.value.split('-')
+        
+        const userBdayObj = {
+            day: Number(userBdayList[2]),
+            month: Number(userBdayList[1]),
+            year: Number(userBdayList[0])
+        }
     
-    const userBdayObj = {
-        day: Number(userBdayList[2]),
-        month: Number(userBdayList[1]),
-        year: Number(userBdayList[0])
-    }
-
-    const isPalindrome = checkAllDateFormatPalindrome(userBdayObj)
+        const isPalindrome = checkAllDateFormatPalindrome(userBdayObj)
+        
+        if(isPalindrome){
+            handleShowResult(`Yayyy!! Your Birthday Is A Palindrome...`, 'green')
+        }else{
+            const [count,nextPalindrome] = getNextPalindrome(userBdayObj)
     
-    if(isPalindrome){
-        handleShowResult(`Yayyy!! Your Birthday Is A Palindrome...`, 'green')
+            handleShowResult(`Oops! Your Birthday is not a palindrome. You Missed by ${count} days. The next palindrome date - ${nextPalindrome.day}:${nextPalindrome.month}:${nextPalindrome.year}`, 'red')
+        }
     }else{
-        const [count,nextPalindrome] = getNextPalindrome(userBdayObj)
-
-        handleShowResult(`Oops! Your Birthday is not a palindrome. You Missed by ${count} days. The next palindrome date - ${nextPalindrome.day}:${nextPalindrome.month}:${nextPalindrome.year}`, 'red')
+        handleShowResult('Please add your Birthdate first', 'red')
     }
 }
 
